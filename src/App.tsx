@@ -1,3 +1,4 @@
+// src/App.tsx
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -15,6 +16,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import BookAppointment from "./pages/BookAppointment";
 import BookTest from "./pages/BookTest";
+import BookPackage from "./pages/BookPackage"; // Add this import
 import Gallery from "./pages/Gallery";
 import Feedback from "./pages/Feedback";
 import NotFound from "./pages/NotFound";
@@ -39,6 +41,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/book-appointment" element={<BookAppointment />} />
+          <Route path="/book-package" element={<BookPackage />} /> {/* Add this route */}
           <Route path="/book-test" element={<BookTest />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/feedback" element={<Feedback />} />

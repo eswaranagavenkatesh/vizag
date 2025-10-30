@@ -370,48 +370,54 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Experience Quality Healthcare?
-          </h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-            Book your appointment today at Visakhapatnam's leading multispeciality clinic. 
-            Expert doctors, advanced diagnostics, and compassionate care await you.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Link to="/book-appointment">
-              <Button size="lg" variant="secondary">
-                Book Appointment Now
-              </Button>
-            </Link>
-            <Link to="/contact">
-              <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary">
-                Contact Us
-              </Button>
-            </Link>
-          </div>
-          <div 
-            className="w-full max-w-[640px] mx-auto bg-muted" 
-            style={{ 
-              height: '1174px', 
-              overflowY: 'hidden', 
-              borderRadius: 'var(--radius)' 
-            }}
-          >
-            <iframe 
-              src="https://docs.google.com/forms/d/e/1FAIpQLSd_j4L6xstkE8HGqPEkUURbtI4eDzE-paxfO7OFrFaTqpW20Q/viewform?embedded=true" 
-              width="640" 
-              height="1174" 
-              frameBorder="0" 
-              marginHeight={0} 
-              marginWidth={0}
-            >
-              Loading…
-            </iframe>
-          </div>
-        </div>
-      </section>
+   {/* CTA Section */}
+<section className="py-20 bg-primary text-primary-foreground">
+  <div className="container mx-auto px-4 text-center">
+    <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      Ready to Experience Quality Healthcare?
+    </h2>
+    <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+      Book your appointment today at Visakhapatnam's leading multispeciality clinic. 
+      Expert doctors, advanced diagnostics, and compassionate care await you.
+    </p>
+    <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+      <Link to="/book-appointment">
+        <Button size="lg" variant="secondary">
+          Book Appointment Now
+        </Button>
+      </Link>
+      <Link to="/contact">
+        <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary">
+          Contact Us
+        </Button>
+      </Link>
+    </div>
+    <div 
+      className="w-full max-w-full mx-auto bg-muted iframe-container" 
+      style={{ 
+        borderRadius: 'var(--radius)',
+        overflow: 'hidden',
+      }}
+    >
+      <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSd_j4L6xstkE8HGqPEkUURbtI4eDzE-paxfO7OFrFaTqpW20Q/viewform?embedded=true" 
+        style={{ 
+          width: '100%', 
+          height: '100vh', // Use viewport height for dynamic scaling
+          minHeight: '600px', // Minimum height for smaller screens
+          maxHeight: '1200px', // Maximum height to prevent excessive growth
+          border: 0,
+        }}
+        frameBorder="0" 
+        marginHeight={0} 
+        marginWidth={0}
+        title="Appointment Booking Form"
+      >
+        Loading…
+      </iframe>
+    </div>
+  </div>
+</section>
 
       {/* Contact Quick Section */}
       <section className="py-16 bg-muted/30">
@@ -475,57 +481,70 @@ const Home = () => {
       </section>
 
       {/* Location Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
-            Visit Us
-          </h2>
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Maharanipeta Map */}
-              <div className="flex flex-col items-center">
-                <h3 className="text-xl font-semibold text-foreground mb-4">
-                  Maharanipeta Branch
-                </h3>
-                <div
-                  className="w-full bg-muted"
-                  style={{
-                    height: '450px',
-                    overflowY: 'hidden',
-                    borderRadius: 'var(--radius)'
-                  }}
-                >
-                  <GoogleMap />
-                </div>
-              </div>
-              {/* Madhurawada Map */}
-              <div className="flex flex-col items-center">
-                <h3 className="text-xl font-semibold text-foreground mb-4">
-                  Madhurawada Branch
-                </h3>
-                <div
-                  className="w-full bg-muted"
-                  style={{
-                    height: '450px',
-                    overflowY: 'hidden',
-                    borderRadius: 'var(--radius)'
-                  }}
-                >
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d15194.11077963066!2d83.357172!3d17.813881!3m2!1i1024!2i768!4f13.1!2m1!1sVisakha%20Multispeciality%20clinics%20and%20Diagnostics%20Chandrampalem%20Srinivasa%20Nagar%20Madhurawada%20Visakhapatnam%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1760864825523!5m2!1sen!2sin"
-                    width="600"
-                    height="450"
-                    style={{ border: 0 }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  ></iframe>
-                </div>
-              </div>
-            </div>
+{/* Location Section */}
+<section className="py-20 bg-muted/30">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
+      Visit Us
+    </h2>
+    <div className="max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Maharanipeta Map */}
+        <div className="flex flex-col items-center">
+          <h3 className="text-xl font-semibold text-foreground mb-4">
+            Maharanipeta Branch
+          </h3>
+          <div
+            className="w-full bg-muted map-container"
+            style={{
+              borderRadius: 'var(--radius)',
+              overflow: 'hidden',
+            }}
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d121624.08606277306!2d83.22405894524553!3d17.709139329816548!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x3a3943f2c3096381%3A0xde2165136cd094df!2sP854%2BMH8%2C%20Kgh%20down%20%2Copp%20kgh%20clock%20tower%2C%20Opp%20KGH%20OP%20Gate%2C%20Krishna%20Nagar%2C%20Jagadamba%20Junction%2C%20Visakhapatnam%2C%20Andhra%20Pradesh%20530002!3m2!1d17.7091565!2d83.3064607!5e0!3m2!1sen!2sin!4v1761646287061!5m2!1sen!2sin"
+              style={{ 
+                width: '100%', 
+                height: '450px', 
+                border: 0,
+              }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Maharanipeta Branch Map"
+            ></iframe>
           </div>
         </div>
-      </section>
+        {/* Madhurawada Map */}
+        <div className="flex flex-col items-center">
+          <h3 className="text-xl font-semibold text-foreground mb-4">
+            Madhurawada Branch
+          </h3>
+          <div
+            className="w-full bg-muted map-container"
+            style={{
+              borderRadius: 'var(--radius)',
+              overflow: 'hidden',
+            }}
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d15194.11077963066!2d83.357172!3d17.813881!3m2!1i1024!2i768!4f13.1!2m1!1sVisakha%20Multispeciality%20clinics%20and%20Diagnostics%20Chandrampalem%20Srinivasa%20Nagar%20Madhurawada%20Visakhapatnam%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1760864825523!5m2!1sen!2sin"
+              style={{ 
+                width: '100%', 
+                height: '450px', 
+                border: 0,
+              }}
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Madhurawada Branch Map"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       <Footer />
 

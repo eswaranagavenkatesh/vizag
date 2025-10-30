@@ -1,3 +1,4 @@
+// src/pages/Packages.tsx
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -11,7 +12,8 @@ const Packages = () => {
   const packages = [
     {
       name: "Basic Diabetic Health Check",
-      price: "₹1,399",
+      actualPrice: "₹2,300",
+      effectivePrice: "₹1,399",
       popular: false,
       tests: [
         "Complete Blood Count (CBC)",
@@ -27,7 +29,8 @@ const Packages = () => {
     },
     {
       name: "Advanced Diabetic Health Check",
-      price: "₹2,299",
+      actualPrice: "₹3,800",
+      effectivePrice: "₹2,299",
       popular: false,
       tests: [
         "All tests from Basic Diabetic Health Check",
@@ -36,7 +39,8 @@ const Packages = () => {
     },
     {
       name: "Complete Diabetic Health Check",
-      price: "₹4,999",
+      actualPrice: "₹6,050",
+      effectivePrice: "₹4,999",
       popular: true,
       tests: [
         "All tests from Advanced Diabetic Health Check",
@@ -49,7 +53,8 @@ const Packages = () => {
     },
     {
       name: "Basic Cardiac Health Check",
-      price: "₹1,899",
+      actualPrice: "₹3,150",
+      effectivePrice: "₹1,899",
       popular: false,
       tests: [
         "Complete Blood Count (CBC)",
@@ -64,7 +69,8 @@ const Packages = () => {
     },
     {
       name: "Advanced Cardiac Health Check",
-      price: "₹2,799",
+      actualPrice: "₹4,650",
+      effectivePrice: "₹2,799",
       popular: false,
       tests: [
         "All tests from Basic Cardiac Health Check",
@@ -73,7 +79,8 @@ const Packages = () => {
     },
     {
       name: "Complete Cardiac Health Check",
-      price: "₹4,799",
+      actualPrice: "₹7,850",
+      effectivePrice: "₹4,799",
       popular: true,
       tests: [
         "All tests from Advanced Cardiac Health Check",
@@ -86,7 +93,8 @@ const Packages = () => {
     },
     {
       name: "Bone Package",
-      price: "₹1,599",
+      actualPrice: "₹2,550",
+      effectivePrice: "₹1,599",
       popular: false,
       tests: [
         "Complete Blood Count (CBC)",
@@ -98,7 +106,8 @@ const Packages = () => {
     },
     {
       name: "Joint Package",
-      price: "₹2,099",
+      actualPrice: "₹3,450",
+      effectivePrice: "₹2,099",
       popular: false,
       tests: [
         "All tests from Bone Package",
@@ -107,7 +116,8 @@ const Packages = () => {
     },
     {
       name: "Master Health Check - Non Diabetic Package",
-      price: "₹4,100",
+      actualPrice: "₹6,400",
+      effectivePrice: "₹4,100",
       popular: false,
       tests: [
         "Complete Blood Count (CBC)",
@@ -131,7 +141,8 @@ const Packages = () => {
     },
     {
       name: "Master Health Check - Diabetic Package",
-      price: "₹4,400",
+      actualPrice: "₹6,900",
+      effectivePrice: "₹4,400",
       popular: false,
       tests: [
         "All tests from Non Diabetic Package",
@@ -140,7 +151,8 @@ const Packages = () => {
     },
     {
       name: "Basic Gynaecology Check",
-      price: "₹2,799",
+      actualPrice: "₹4,650",
+      effectivePrice: "₹2,799",
       popular: false,
       tests: [
         "Complete Blood Count (CBC)",
@@ -159,7 +171,8 @@ const Packages = () => {
     },
     {
       name: "Advanced Gynaecology Check",
-      price: "₹4,299",
+      actualPrice: "₹7,300",
+      effectivePrice: "₹4,299",
       popular: false,
       tests: [
         "All tests from Basic Gynaecology Check",
@@ -170,7 +183,8 @@ const Packages = () => {
     },
     {
       name: "Infertility Package - Female",
-      price: "₹1,950",
+      actualPrice: "₹2,780",
+      effectivePrice: "₹1,950",
       popular: false,
       tests: [
         "Hemoglobin (HB%)",
@@ -184,7 +198,8 @@ const Packages = () => {
     },
     {
       name: "Infertility Package - Male",
-      price: "₹2,450",
+      actualPrice: "₹3,500",
+      effectivePrice: "₹2,450",
       popular: false,
       tests: [
         "Hemoglobin (HB%)",
@@ -215,8 +230,9 @@ const Packages = () => {
                   <CardTitle className="text-2xl">{pkg.name}</CardTitle>
                   {pkg.popular && <Badge>Most Popular</Badge>}
                 </div>
-                <CardDescription className="text-3xl font-bold text-primary">
-                  {pkg.price}
+                <CardDescription className="flex items-center gap-2">
+                  <span className="text-lg text-muted-foreground line-through">{pkg.actualPrice}</span>
+                  <span className="text-3xl font-bold text-primary">{pkg.effectivePrice}</span>
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -228,7 +244,7 @@ const Packages = () => {
                     </li>
                   ))}
                 </ul>
-                <Link to="/book-appointment">
+                <Link to={`/book-package?package=${encodeURIComponent(pkg.name)}`}>
                   <Button className="w-full" variant={pkg.popular ? "default" : "outline"}>
                     Book Package
                   </Button>
