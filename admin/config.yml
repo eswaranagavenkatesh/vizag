@@ -1,18 +1,16 @@
+local_backend: true
+
 backend:
-  name: git-gateway
-  branch: main
+  name: test-repo
 
 media_folder: "src/assets"
 public_folder: "/src/assets"
 
 collections:
-  # ================================
-  # DOCTORS
-  # ================================
   - name: "doctors"
     label: "Doctors"
     files:
-      - label: "Doctors"
+      - label: "Doctors Data"
         name: "doctors"
         file: "src/data/doctors.json"
         fields:
@@ -29,136 +27,3 @@ collections:
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Qualifications", name: "qualifications", widget: "string" }
               - { label: "Availability", name: "availability", widget: "string" }
-
-  # ================================
-  # SERVICES
-  # ================================
-  - name: "services"
-    label: "Services"
-    files:
-      - label: "Services"
-        name: "services"
-        file: "src/data/services.json"
-        fields:
-          - label: "Services"
-            name: "services"
-            widget: "list"
-            fields:
-              - { label: "ID", name: "id", widget: "string" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Icon", name: "icon", widget: "string" }
-              - { label: "Route", name: "route", widget: "string" }
-              - label: "Features"
-                name: "features"
-                widget: "list"
-                field: { label: "Feature", name: "feature", widget: "string" }
-
-  # ================================
-  # HEALTH PACKAGES
-  # ================================
-  - name: "packages"
-    label: "Health Packages"
-    files:
-      - label: "Health Packages"
-        name: "packages"
-        file: "src/data/healthPackages.json"
-        fields:
-          - label: "Packages"
-            name: "packages"
-            widget: "list"
-            fields:
-              - { label: "ID", name: "id", widget: "string" }
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Price", name: "price", widget: "number" }
-              - label: "Tests"
-                name: "tests"
-                widget: "list"
-                field: { label: "Test", name: "test", widget: "string" }
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Recommended For", name: "recommended", widget: "string" }
-
-  # ================================
-  # LAB TESTS
-  # ================================
-  - name: "tests"
-    label: "Lab Tests"
-    files:
-      - label: "Lab Tests"
-        name: "tests"
-        file: "src/data/tests.json"
-        fields:
-          - label: "Tests"
-            name: "tests"
-            widget: "list"
-            fields:
-              - { label: "ID", name: "id", widget: "string" }
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Price", name: "price", widget: "number" }
-              - { label: "Duration", name: "duration", widget: "string" }
-              - { label: "Preparation", name: "preparation", widget: "string" }
-
-  # ================================
-  # PATIENT FEEDBACK
-  # ================================
-  - name: "feedback"
-    label: "Patient Feedback"
-    files:
-      - label: "Feedback"
-        name: "feedback"
-        file: "src/data/feedback.json"
-        fields:
-          - label: "Feedback"
-            name: "feedback"
-            widget: "list"
-            fields:
-              - { label: "ID", name: "id", widget: "string" }
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Rating", name: "rating", widget: "number", min: 1, max: 5 }
-              - { label: "Message", name: "message", widget: "text" }
-              - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD" }
-              - { label: "Avatar", name: "avatar", widget: "image" }
-
-  # ================================
-  # PHARMACY PRODUCTS
-  # ================================
-  - name: "products"
-    label: "Pharmacy Products"
-    files:
-      - label: "Products"
-        name: "products"
-        file: "src/data/products.json"
-        fields:
-          - label: "Products"
-            name: "products"
-            widget: "list"
-            fields:
-              - { label: "ID", name: "id", widget: "string" }
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Category", name: "category", widget: "string" }
-              - { label: "Price", name: "price", widget: "number" }
-              - { label: "In Stock", name: "inStock", widget: "boolean", default: true }
-              - { label: "Image", name: "image", widget: "image" }
-              - { label: "Description", name: "description", widget: "text" }
-              - { label: "Prescription Required", name: "prescription", widget: "boolean", required: false }
-
-  # ================================
-  # GALLERY
-  # ================================
-  - name: "gallery"
-    label: "Gallery"
-    files:
-      - label: "Gallery Images"
-        name: "gallery"
-        file: "src/data/gallery.json"
-        fields:
-          - label: "Images"
-            name: "images"
-            widget: "list"
-            fields:
-              - { label: "ID", name: "id", widget: "number" }
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Category", name: "category", widget: "string" }
-              - { label: "Image", name: "image", widget: "image" }
